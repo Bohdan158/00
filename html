@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Order Management System</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Orders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID замовлення</th>
+                        <th>Ім'я клієнта</th>
+                        <th>Адреса доставки</th>
+                        <th>Статус</th>
+                        <th>Дата створення замовлення</th>
+                        <th>Дата доставки</th>
+                        <th>Назва товару</th>
+                        <th>Кількість</th>
+                        <th>Ціна за одиницю</th>
+                        <th>Загальна вартість</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Add New Order</h2>
+            <form id="order-form">
+                <label for="client-name">Ім'я клієнта:</label>
+                <input type="text" id="client-name" name="clientName" required>
+
+                <label for="delivery-address">Адреса доставки:</label>
+                <input type="text" id="delivery-address" name="deliveryAddress" required>
+
+                <label for="status">Статус:</label>
+                <select id="status" name="status">
+                    <option value="Pending">Очікується</option>
+                    <option value="Shipped">Відправлено</option>
+                    <option value="Delivered">Доставлено</option>
+                </select>
+
+                <label for="creation-date">Дата створення замовлення:</label>
+                <input type="date" id="creation-date" name="creationDate" required>
+
+                <label for="delivery-date">Дата доставки:</label>
+                <input type="date" id="delivery-date" name="deliveryDate" required>
+
+                <label for="product-name">Назва товару:</label>
+                <input type="text" id="product-name" name="productName" required>
+
+                <label for="quantity">Кількість:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <label for="unit-price">Ціна за одиницю:</label>
+                <input type="number" id="unit-price" name="unitPrice" step="0.01" required>
+
+                <button type="submit">Add Order</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
